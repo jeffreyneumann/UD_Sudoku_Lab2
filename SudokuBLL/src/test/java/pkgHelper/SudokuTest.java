@@ -9,6 +9,16 @@ import org.junit.Test;
 import pkgGame.Sudoku;
 
 public class SudokuTest {
+	
+	/*
+	 * 5 out of the 6 test cases below are throwing 
+	 * Null Pointer Exceptions. This suggests that
+	 * the object references below are somehow being set
+	 * to null. I have attempted to identify the source
+	 * of this error, but I can't locate it. Additionally,
+	 * I have not figured out how the last test case doesn't
+	 * throw an exception while the others do.
+	 */
 
 	public SudokuTest() {
 	}
@@ -27,37 +37,37 @@ public class SudokuTest {
 	
 	@Test
 	public void getRegionNbr_test() {
-		Sudoku S = new Sudoku(sudokuPuzzle);
-		assertTrue (Arrays.equals(myArray,S.getRegion(0)));
+		Sudoku S1 = new Sudoku(sudokuPuzzle);
+		assertTrue (Arrays.equals(myArray,S1.getRegion(0)));
 	}
 	
 	@Test
 	public void getRegionCor_test() {
-		Sudoku S = new Sudoku(sudokuPuzzle);
-		assertTrue(Arrays.equals(myArray,S.getRegion(1,1)));
+		Sudoku S2 = new Sudoku(sudokuPuzzle);
+		assertTrue(Arrays.equals(myArray,S2.getRegion(1,1)));
 	}
 	
 	@Test
 	public void hasDuplicate_test() {
-		Sudoku S = new Sudoku(sudokuPuzzle);
-		assertEquals(false,S.hasDuplicates());
+		Sudoku S3 = new Sudoku(sudokuPuzzle);
+		assertEquals(false,S3.hasDuplicates());
 	}
 	
 	@Test
 	public void isSudoku_test() {
-		Sudoku S = new Sudoku(sudokuPuzzle);
-		assertEquals(true,S.isSudoku());
+		Sudoku S4 = new Sudoku(sudokuPuzzle);
+		assertEquals(true,S4.isSudoku());
 	}
 	
 	@Test
 	public void isPartialSudoku_test() {
-		Sudoku S = new Sudoku(sudokuPuzzle);
-		assertEquals(false,S.isPartialSudoku());
+		Sudoku S5 = new Sudoku(sudokuPuzzle);
+		assertEquals(false,S5.isPartialSudoku());
 	}
 	
 	@Test
 	public void isValueValid_test() {
-		Sudoku S = new Sudoku(sudokuPuzzle);
-		assertEquals(true,S.isValueValid(6, 4, 4));
+		Sudoku S6 = new Sudoku(sudokuPuzzle);
+		assertEquals(false,S6.isValueValid(5, 4, 4));
 	}
 }
