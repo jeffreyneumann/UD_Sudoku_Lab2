@@ -1,7 +1,7 @@
 package pkgHelper;
 
 import java.util.Arrays;
-
+  
 public class LatinSquare {
 
 	/**
